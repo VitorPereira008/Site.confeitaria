@@ -1,0 +1,272 @@
+/* =========================================
+   IMPORTAÇÃO DE FONTES GOOGLE
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-dark: #1A1817;
+    --color-brown: #2C221E;
+    --color-accent: #A67C52;
+    --color-gold: #C5A059;
+    --color-cream: #F4EFEA;
+    --color-surface: #FAF8F5;
+    
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { font-family: var(--font-body); overflow-x: hidden; background-color: var(--color-surface); }
+h1, h2, h3, h4, .font-heading { font-family: var(--font-heading); }
+
+/* =========================================
+   TIPOGRAFIA ESPECIAL E EFEITOS
+   ========================================= */
+.texto-caligrafia {
+    font-family: var(--font-script);
+    font-size: 5.5rem;
+    color: var(--color-cream);
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.texto-arial {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: -15px;
+    z-index: 2;
+}
+
+.glass-header-scrolled {
+    background: rgba(250, 248, 245, 0.95) !important;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.text-shadow-video { text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8), 0px 4px 15px rgba(0, 0, 0, 0.6); }
+.drop-shadow-video { filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.6)); }
+
+/* =========================================
+   HERO BANNER COM VÍDEO - ADAPTADO PARA MOBILE
+   ========================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    /* 100dvh garante que ocupe a tela toda no celular sem ser cortado pela barra do navegador */
+    min-height: 100dvh; 
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%); 
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    color: #fff;
+}
+
+.hero-text span {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    background: var(--color-brown);
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-family: var(--font-heading);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 strong { color: var(--color-gold); }
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #E0E0E0;
+    margin-bottom: 32px;
+}
+
+/* =========================================
+   BOTÕES COM ÁREA DE TOQUE MELHORADA
+   ========================================= */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-principal, .btn-secundario {
+    padding: 16px 32px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 180px;
+}
+
+.btn-principal {
+    background: var(--color-accent);
+    color: white;
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 4px 15px rgba(166, 124, 82, 0.3);
+}
+
+.btn-principal:hover, .btn-principal:active {
+    background: var(--color-brown);
+    border-color: var(--color-brown);
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-secundario:hover, .btn-secundario:active {
+    background: #ffffff;
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   SEÇÃO QUERIDINHOS (CARROSSEL SWIPER)
+   ========================================= */
+.queridinhos-section {
+    padding: 100px 0;
+    background-color: var(--color-brown); 
+    overflow: hidden;
+}
+
+.queridinhos-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.queridinhos-text-area { width: 35%; display: flex; flex-direction: column; }
+.titulo-principal { display: flex; flex-direction: column; margin-bottom: 20px; }
+.descricao-secao { color: #D3C9C1; font-size: 1rem; line-height: 1.6; margin-bottom: 30px; max-width: 90%; }
+.queridinhos-carousel-area { width: 60%; position: relative; }
+.swiper { width: 100%; padding-top: 30px; padding-bottom: 50px; }
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 280px; 
+    height: 380px; 
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 6px solid #fff; 
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.4), 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================
+   FILTROS DO CARDÁPIO & ANIMAÇÕES (MOTION)
+   ========================================= */
+.filter-btn { transition: all 0.3s ease; }
+.filter-btn.active {
+    background-color: var(--color-brown) !important;
+    color: #FFFFFF !important;
+    border-color: var(--color-brown) !important;
+    box-shadow: 0 4px 12px rgba(44, 34, 30, 0.2);
+}
+
+.motion-element.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.ocasions-card .card-content {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease-out;
+}
+
+.ocasions-card:hover .card-content,
+.ocasions-card.force-hover .card-content {
+    max-height: 150px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE E TABLET)
+   ========================================= */
+@media (max-width: 900px) {
+    .queridinhos-container { flex-direction: column; text-align: center; }
+    .queridinhos-text-area { width: 100%; align-items: center; }
+    .descricao-secao { max-width: 100%; }
+    .queridinhos-carousel-area { width: 100vw; margin-left: -5%; }
+    .texto-caligrafia { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 100px 6% 60px; }
+    
+    .hero-overlay {
+        /* Gradiente de cima para baixo no celular para garantir que o texto fique legível sobre o vídeo */
+        background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.95) 100%);
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Empurra o texto para baixo, dando mais foco visual na arte/vídeo no topo */
+        height: 100%;
+        margin-top: auto;
+        padding-bottom: 20px;
+    }
+
+    .hero-text span { align-self: flex-start; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+
+    .btn-principal, .btn-secundario {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px; /* Aumenta a área de toque no celular para dedos */
+    }
+}

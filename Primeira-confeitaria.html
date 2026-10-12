@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confeitaria Doce Encanto</title>
+  <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1A1817',
+                            brown: '#2C221E',
+                            accent: '#A67C52',
+                            gold: '#C5A059',
+                            cream: '#F4EFEA',
+                            surface: '#FAF8F5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Arial', 'Helvetica', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fontes & Swiper -->
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FAF8F5] text-brand-brown font-sans selection:bg-brand-accent selection:text-white relative">
+
+<!-- Header / Navegação -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent border-b border-transparent transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group drop-shadow-video" id="logo-container">
+                
+                <!-- Imagem da Logo: Altere o 'src' com o nome do seu arquivo -->
+                <img src="./Logo Bolos.png" alt="Logo da Confeitaria" class="h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-md">
+            
+            </a>
+
+        
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide uppercase" id="desktop-nav">
+                <a href="#home" class="text-white text-shadow-video hover:text-brand-gold transition-colors">Início</a>
+                <a href="#sobre" class="text-white text-shadow-video hover:text-brand-gold transition-colors">Sobre Nós</a>
+                <a href="#cardapio" class="text-white text-shadow-video hover:text-brand-gold transition-colors">Cardápio</a>
+                <a href="#ocasioes" class="text-white text-shadow-video hover:text-brand-gold transition-colors">Ocasiões</a>
+                <a href="#faq" class="text-white text-shadow-video hover:text-brand-gold transition-colors">Dúvidas</a>
+                <a href="#contato" class="text-white text-shadow-video hover:text-brand-gold transition-colors">Contato</a>
+            </nav>
+
+            <!-- Perfil / Pedido Direto -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/5511999999999" target="_blank" class="bg-brand-gold hover:bg-brand-accent text-white px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition-colors shadow-md flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Fazer Pedido</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white drop-shadow-video hover:text-brand-gold p-2 transition-colors duration-300">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-brown text-white border-b border-brand-accent px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="block py-2 hover:text-brand-gold font-medium uppercase text-sm">Início</a>
+            <a href="#sobre" class="block py-2 hover:text-brand-gold font-medium uppercase text-sm">Sobre Nós</a>
+            <a href="#cardapio" class="block py-2 hover:text-brand-gold font-medium uppercase text-sm">Cardápio</a>
+            <a href="#ocasioes" class="block py-2 hover:text-brand-gold font-medium uppercase text-sm">Ocasiões</a>
+            <a href="#faq" class="block py-2 hover:text-brand-gold font-medium uppercase text-sm">Dúvidas</a>
+            <a href="#contato" class="block py-2 hover:text-brand-gold font-medium uppercase text-sm">Contato</a>
+            <a href="https://wa.me/5511999999999" target="_blank" class="w-full bg-brand-accent text-white px-4 py-3 rounded font-medium text-center flex items-center justify-center gap-2 mt-4 uppercase text-sm tracking-wider">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Faça seu Pedido</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero" id="home">
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="./Videobanner.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text drop-shadow-video">
+            <span>Confeitaria Artesanal & Gastronomia</span>
+
+            <h1 class="text-shadow-video">
+                Alta Gastronomia em <strong>Doces & Bolos</strong>
+            </h1>
+
+            <p class="text-shadow-video">
+                Produtos elaborados com técnicas refinadas e ingredientes selecionados para proporcionar momentos inesquecíveis.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#cardapio" class="btn-principal drop-shadow-video">Ver Cardápio</a>
+                <a href="#contato" class="btn-secundario drop-shadow-video">Fazer Encomenda</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Nossos Queridinhos -->
+    <section id="queridinhos" class="queridinhos-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 queridinhos-container">
+            
+            <!-- Área Esquerda: Títulos -->
+            <div class="queridinhos-text-area">
+                <h2 class="titulo-principal">
+                    <span class="texto-arial">Nossos</span>
+                    <span class="texto-caligrafia">Queridinhos</span>
+                </h2>
+                <p class="descricao-secao">
+                    As criações mais amadas da nossa confeitaria. 
+                    Deslize para o lado e deixe-se encantar pela arte em forma de doce.
+                </p>
+            </div>
+
+            <!-- Área Direita: Carrossel Animado -->
+            <div class="queridinhos-carousel-area">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Bolo 1"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Bolo 2"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Bolo 3"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80" alt="Bolo 4"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=80" alt="Bolo 5"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO: SOBRE NÓS -->
+    <section id="sobre" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Imagem / Colagem -->
+                <div class="relative">
+                    <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80" alt="Confeitaria Doce Encanto" class="w-full h-[450px] object-cover">
+                    </div>
+                    <!-- Elemento decorativo atrás -->
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-brand-accent rounded-lg -z-0 hidden sm:block"></div>
+                    <div class="absolute top-6 left-6 bg-brand-brown text-white p-6 rounded shadow-xl max-w-xs z-20">
+                        <span class="block text-3xl font-bold text-brand-gold">100%</span>
+                        <span class="text-xs uppercase tracking-wider">Artesanal & feito com amor diário</span>
+                    </div>
+                </div>
+
+                <!-- Conteúdo de Texto -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-brand-accent font-bold text-xs tracking-widest uppercase">Nossa História</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-brown mt-2">Paixão por Transformar Momentos em Doce Arte</h2>
+                    </div>
+
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        A <strong class="text-brand-brown">Doce Encanto</strong> nasceu do sonho de unir alta confeitaria técnica ao carinho do sabor caseiro. Selecionamos rigorosamente cada ingrediente, trabalhando com chocolates nobres, frutas frescas e processos artesanais refinados.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Não entregamos apenas bolos e sobremesas; criamos o centro das atenções da sua comemoração. Seja para um café da tarde especial ou para o grande dia da sua vida, nossos sabores são pensados para encantar memórias.
+                    </p>
+
+                    <!-- Diferenciais em Grade -->
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded bg-brand-surface border border-brand-accent/30 flex items-center justify-center text-brand-accent shrink-0">
+                                <i class="fa-solid fa-wheat-awn"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase text-brand-brown">Ingredientes Selecionados</h4>
+                                <p class="text-gray-500 text-xs">Sem conservantes artificiais</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded bg-brand-surface border border-brand-accent/30 flex items-center justify-center text-brand-accent shrink-0">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase text-brand-brown">Design Exclusivo</h4>
+                                <p class="text-gray-500 text-xs">Decorações exclusivas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: OCASIÕES ESPECIAIS (GRID IGUAL + MOTION) -->
+    <section id="ocasioes" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Elementos de fundo animados via CSS -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-accent rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-gold rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16 motion-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+                <span class="text-brand-gold font-bold text-xs tracking-widest uppercase">Celebre a Vida</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Momentos Inesquecíveis</h2>
+                <p class="text-gray-400 text-sm mt-4 max-w-2xl mx-auto">Desenvolvemos doces e bolos com design exclusivo e paladares refinados para se adequar perfeitamente a cada tipo de celebração.</p>
+            </div>
+
+            <!-- Container Grid (Tamanhos 100% Iguais) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px] w-full" id="ocasions-container">
+                
+                <!-- Card 1: Casamentos -->
+                <div class="ocasions-card relative overflow-hidden rounded-2xl cursor-pointer motion-element opacity-0 translate-y-10 transition-all duration-700 ease-out delay-100 group bg-brand-brown min-h-[400px] md:min-h-full">
+                    <!-- Imagem de Fundo (Ajustada para não dar zoom excessivo) -->
+                    <div class="parallax-bg absolute inset-[-15px] bg-cover bg-center transition-transform duration-300 ease-out opacity-60 group-hover:opacity-90" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300 group-hover:from-black"></div>
+                    
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end h-full z-10">
+                        <div class="icon-wrapper w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white mb-4 shadow-lg transition-transform duration-500 transform group-hover:-translate-y-2">
+                            <i class="fa-solid fa-ring text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-heading mb-2 text-white shadow-sm transition-transform duration-500 group-hover:-translate-y-1">Casamentos</h3>
+                        <div class="card-content overflow-hidden transition-all duration-500 ease-out">
+                            <p class="text-sm text-gray-300 mt-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Bolos de andares sofisticados, doces finos esmaltados e mesas de sobremesa que brilham tanto quanto os noivos.</p>
+                            <a href="#contato" class="text-brand-gold text-xs font-bold uppercase tracking-wider hover:text-white transition-colors flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">Solicitar Orçamento <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Aniversários -->
+                <div class="ocasions-card relative overflow-hidden rounded-2xl cursor-pointer motion-element opacity-0 translate-y-10 transition-all duration-700 ease-out delay-200 group bg-brand-brown min-h-[400px] md:min-h-full">
+                    <div class="parallax-bg absolute inset-[-15px] bg-cover bg-center transition-transform duration-300 ease-out opacity-60 group-hover:opacity-90" style="background-image: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300 group-hover:from-black"></div>
+                    
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end h-full z-10">
+                        <div class="icon-wrapper w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white mb-4 shadow-lg transition-transform duration-500 transform group-hover:-translate-y-2">
+                            <i class="fa-solid fa-cake-candles text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-heading mb-2 text-white shadow-sm transition-transform duration-500 group-hover:-translate-y-1">Aniversários</h3>
+                        <div class="card-content overflow-hidden transition-all duration-500 ease-out">
+                            <p class="text-sm text-gray-300 mt-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">De festas infantis coloridas a comemorações adultas elegantes, personalizamos o bolo perfeito para o seu tema.</p>
+                            <a href="#contato" class="text-brand-gold text-xs font-bold uppercase tracking-wider hover:text-white transition-colors flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">Solicitar Orçamento <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Corporativo -->
+                <div class="ocasions-card relative overflow-hidden rounded-2xl cursor-pointer motion-element opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300 group bg-brand-brown min-h-[400px] md:min-h-full">
+                    <div class="parallax-bg absolute inset-[-15px] bg-cover bg-center transition-transform duration-300 ease-out opacity-60 group-hover:opacity-90" style="background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300 group-hover:from-black"></div>
+                    
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end h-full z-10">
+                        <div class="icon-wrapper w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white mb-4 shadow-lg transition-transform duration-500 transform group-hover:-translate-y-2">
+                            <i class="fa-solid fa-handshake text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-heading mb-2 text-white shadow-sm transition-transform duration-500 group-hover:-translate-y-1">Corporativo</h3>
+                        <div class="card-content overflow-hidden transition-all duration-500 ease-out">
+                            <p class="text-sm text-gray-300 mt-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Coffee breaks de alto padrão, kits de presente para colaboradores e doces com a marca da sua empresa.</p>
+                            <a href="#contato" class="text-brand-gold text-xs font-bold uppercase tracking-wider hover:text-white transition-colors flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">Solicitar Orçamento <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: ESBOÇO DO CARDÁPIO -->
+    <section id="cardapio" class="py-24 bg-brand-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-accent font-bold text-xs tracking-widest uppercase">Conheça Nossos Sabores</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-brown mt-2">Nosso Cardápio Especial</h2>
+                <p class="text-gray-600 text-sm mt-2">Navegue pelas categorias e selecione a sua opção preferida para fazer a encomenda.</p>
+                
+                <!-- Abas / Filtros -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8" id="menu-filters">
+                    <button class="filter-btn active bg-brand-brown text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all" data-filter="todos">Todos</button>
+                    <button class="filter-btn bg-white text-brand-brown border border-gray-200 px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:border-brand-accent transition-all" data-filter="bolos-festa">Bolos de Festa</button>
+                    <button class="filter-btn bg-white text-brand-brown border border-gray-200 px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:border-brand-accent transition-all" data-filter="caseiros">Bolos Caseiros</button>
+                    <button class="filter-btn bg-white text-brand-brown border border-gray-200 px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:border-brand-accent transition-all" data-filter="tortas">Tortas & Cheesecakes</button>
+                    <button class="filter-btn bg-white text-brand-brown border border-gray-200 px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:border-brand-accent transition-all" data-filter="doces">Doces Finos</button>
+                </div>
+            </div>
+
+            <!-- Grid de Produtos do Cardápio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardapio-grid">
+                
+                <!-- Item 1: Bolo de Festa -->
+                <div class="cardapio-item bolos-festa bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Red Velvet" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-brand-gold text-white text-[10px] font-bold uppercase px-3 py-1 rounded">Mais Vendido</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-brand-brown">Red Velvet Velvet</h3>
+                            <span class="text-brand-accent font-bold text-base">R$ 120/kg</span>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Massa aveludada com toque de cacau, recheada com cream cheese suave e geleia artesanal de frutas vermelhas.</p>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa-solid fa-users text-brand-accent mr-1"></i> Serve ~10 fatias/kg</span>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20encomendar%20o%20Bolo%20Red%20Velvet" target="_blank" class="bg-brand-accent hover:bg-brand-brown text-white font-bold px-3 py-1.5 rounded transition-colors uppercase tracking-wider text-[11px]">
+                                Pedir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Bolo de Festa -->
+                <div class="cardapio-item bolos-festa bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Ninho com Nutella" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-brand-brown">Ninho com Nutella</h3>
+                            <span class="text-brand-accent font-bold text-base">R$ 110/kg</span>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Massa pão de ló super fofinha, recheio duplo de creme de Leite Ninho e generosa camada de Nutella pura.</p>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa-solid fa-users text-brand-accent mr-1"></i> Serve ~10 fatias/kg</span>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20encomendar%20o%20Bolo%20Ninho%20com%20Nutella" target="_blank" class="bg-brand-accent hover:bg-brand-brown text-white font-bold px-3 py-1.5 rounded transition-colors uppercase tracking-wider text-[11px]">
+                                Pedir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Torta -->
+                <div class="cardapio-item tortas bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=80" alt="Cheesecake Frutas Vermelhas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-brand-brown">Cheesecake NY</h3>
+                            <span class="text-brand-accent font-bold text-base">R$ 130/unid</span>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Base crocante de biscoito amanteigado, creme de queijo assado suave e cobertura de geleia natural.</p>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa-solid fa-pie-chart text-brand-accent mr-1"></i> 22cm (~12 fatias)</span>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20encomendar%20o%20Cheesecake" target="_blank" class="bg-brand-accent hover:bg-brand-brown text-white font-bold px-3 py-1.5 rounded transition-colors uppercase tracking-wider text-[11px]">
+                                Pedir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Caseiro -->
+                <div class="cardapio-item caseiros bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80" alt="Bolo de Cenoura com Vulcão" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-brand-brown">Cenoura Vulcão</h3>
+                            <span class="text-brand-accent font-bold text-base">R$ 55/unid</span>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">O clássico fofinho de cenoura com uma erupção de cobertura cremosa de brigadeiro gourmet 50% cacau.</p>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa-solid fa-mug-hot text-brand-accent mr-1"></i> Perfeito para o café</span>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20encomendar%20o%20Bolo%20Vulcão" target="_blank" class="bg-brand-accent hover:bg-brand-brown text-white font-bold px-3 py-1.5 rounded transition-colors uppercase tracking-wider text-[11px]">
+                                Pedir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Doces Finos -->
+                <div class="cardapio-item doces bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&q=80" alt="Cento de Brigadeiros Finos" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-brand-brown">Cento de Brigadeiros</h3>
+                            <span class="text-brand-accent font-bold text-base">R$ 180/cento</span>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Seleção gourmet de Brigadeiro Belga ao leite, Pistache e Ninho com Nutella (100 unidades mistas).</p>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa-solid fa-box text-brand-accent mr-1"></i> Caixa com 100 un</span>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20encomendar%20o%20Cento%20de%20Brigadeiros" target="_blank" class="bg-brand-accent hover:bg-brand-brown text-white font-bold px-3 py-1.5 rounded transition-colors uppercase tracking-wider text-[11px]">
+                                Pedir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Torta -->
+                <div class="cardapio-item tortas bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80" alt="Banoffee Especial" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-brand-brown">Torta Banoffee</h3>
+                            <span class="text-brand-accent font-bold text-base">R$ 95/unid</span>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Camadas de biscoito crocante, doce de leite artesanal, bananas frescas e chantilly polvilhado com canela.</p>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa-solid fa-pie-chart text-brand-accent mr-1"></i> Serve ~10 pessoas</span>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20encomendar%20a%20Banoffee" target="_blank" class="bg-brand-accent hover:bg-brand-brown text-white font-bold px-3 py-1.5 rounded transition-colors uppercase tracking-wider text-[11px]">
+                                Pedir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SEÇÃO: PERGUNTAS FREQUENTES / FAQ -->
+    <section id="faq" class="py-20 bg-brand-surface border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-accent font-bold text-xs tracking-widest uppercase">Dúvidas Comuns</span>
+                <h2 class="text-3xl font-bold text-brand-brown mt-2">Perguntas Frequentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm faq-item">
+                    <h3 class="font-bold text-brand-brown text-sm flex items-center justify-between cursor-pointer faq-toggle select-none">
+                        <span>Com quanta antecedência devo fazer meu pedido?</span>
+                        <i class="fa-solid fa-angle-down text-brand-accent transition-transform duration-300"></i>
+                    </h3>
+                    <div class="faq-answer-wrapper overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0px;">
+                        <p class="text-gray-700 bg-brand-cream border-l-2 border-brand-accent p-4 rounded text-xs mt-4 leading-relaxed">
+                            Para bolos simples e caseiros, aceitamos pedidos com até 24h de antecedência. Para bolos de festa e kits grandes, recomendamos encomendar com pelo menos 48h a 7 dias de antecedência.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm faq-item">
+                    <h3 class="font-bold text-brand-brown text-sm flex items-center justify-between cursor-pointer faq-toggle select-none">
+                        <span>Vocês realizam entregas na região?</span>
+                        <i class="fa-solid fa-angle-down text-brand-accent transition-transform duration-300"></i>
+                    </h3>
+                    <div class="faq-answer-wrapper overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0px;">
+                        <p class="text-gray-700 bg-brand-cream border-l-2 border-brand-accent p-4 rounded text-xs mt-4 leading-relaxed">
+                            Sim! Realizamos entregas via portador especializado para garantir que seu bolo chegue impecável. A taxa varia conforme o bairro. Também disponibilizamos retirada gratuita em nossa loja.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm faq-item">
+                    <h3 class="font-bold text-brand-brown text-sm flex items-center justify-between cursor-pointer faq-toggle select-none">
+                        <span>Quais são as formas de pagamento aceitas?</span>
+                        <i class="fa-solid fa-angle-down text-brand-accent transition-transform duration-300"></i>
+                    </h3>
+                    <div class="faq-answer-wrapper overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0px;">
+                        <p class="text-gray-700 bg-brand-cream border-l-2 border-brand-accent p-4 rounded text-xs mt-4 leading-relaxed">
+                            Aceitamos PIX, Cartões de Crédito e Débito. Para encomendas, solicitamos um sinal de 50% no momento da confirmação do pedido.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm faq-item">
+                    <h3 class="font-bold text-brand-brown text-sm flex items-center justify-between cursor-pointer faq-toggle select-none">
+                        <span>Como devo conservar o meu bolo?</span>
+                        <i class="fa-solid fa-angle-down text-brand-accent transition-transform duration-300"></i>
+                    </h3>
+                    <div class="faq-answer-wrapper overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0px;">
+                        <p class="text-gray-700 bg-brand-cream border-l-2 border-brand-accent p-4 rounded text-xs mt-4 leading-relaxed">
+                            Recomendamos manter os bolos de festa sob refrigeração até cerca de 30 a 40 minutos antes de servir, garantindo que o recheio mantenha a textura perfeita. Bolos caseiros sem cobertura sensível podem ser mantidos em temperatura ambiente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Localização -->
+    <section id="contato" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Formulário -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-brand-accent font-bold text-xs tracking-widest uppercase">Atendimento</span>
+                        <h2 class="text-3xl font-bold text-brand-brown mt-2">Faça sua Encomenda</h2>
+                        <p class="text-gray-600 mt-2 text-sm">Preencha o formulário abaixo ou entre em contato diretamente pelo WhatsApp.</p>
+                    </div>
+
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-brown uppercase mb-1">Nome Completo</label>
+                            <input type="text" required placeholder="Digite seu nome" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:border-brand-accent transition-all text-sm">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-brand-brown uppercase mb-1">Telefone / WhatsApp</label>
+                                <input type="tel" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:border-brand-accent transition-all text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-brand-brown uppercase mb-1">Data do Evento</label>
+                                <input type="date" required class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:border-brand-accent transition-all text-sm text-gray-600">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-brown uppercase mb-1">Detalhes do Pedido</label>
+                            <textarea rows="4" required placeholder="Descreva os produtos desejados, quantidade de convidados, sabor de preferência, etc." class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:border-brand-accent transition-all text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-accent hover:bg-brand-brown text-white py-4 rounded font-bold uppercase text-xs tracking-wider transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Enviar Mensagem</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info & Mapa -->
+                <div class="flex flex-col justify-between space-y-6">
+                    <div class="p-8 rounded bg-brand-surface border border-gray-200 space-y-6">
+                        <h3 class="text-xl font-bold text-brand-brown border-b border-gray-200 pb-4">Informações de Contato</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded bg-brand-accent flex items-center justify-center text-white shrink-0">
+                                    <i class="fa-solid fa-location-dot text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-brown text-sm">Endereço</h4>
+                                    <p class="text-gray-600 text-sm">Rua das Flores, 123 - Jardins, São Paulo - SP</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded bg-brand-accent flex items-center justify-center text-white shrink-0">
+                                    <i class="fa-solid fa-clock text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-brown text-sm">Horário de Funcionamento</h4>
+                                    <p class="text-gray-600 text-sm">Terça a Sábado: 09h às 19h</p>
+                                    <p class="text-gray-600 text-sm">Domingo: 09h às 14h</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded bg-brand-accent flex items-center justify-center text-white shrink-0">
+                                    <i class="fa-solid fa-envelope text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-brown text-sm">Contato Direto</h4>
+                                    <p class="text-gray-600 text-sm">contato@doceencantoconfeitaria.com.br</p>
+                                    <p class="text-gray-600 text-sm">(11) 99999-9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa -->
+                    <div class="rounded overflow-hidden h-60 border border-gray-200 relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197587029251!2d-46.65867!3d-23.561414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJNDEuMSJTIDQ2wrAzOSczMS4yIlc!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5511999999999" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 animate-bounce" title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Rodapé -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gray-800">
+                <div class="space-y-4">
+                    <span class="text-xl font-bold tracking-tight">
+                        DOCE <span class="text-brand-gold">ENCANTO</span>
+                    </span>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Qualidade técnica e alto padrão em confeitaria artesanal.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-brand-gold">Navegação</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                        <li><a href="#cardapio" class="hover:text-white transition-colors">Cardápio</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-brand-gold">Especialidades</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Bolos Artísticos</li>
+                        <li>Doces Finos</li>
+                        <li>Cheesecakes & Tortas</li>
+                        <li>Kits para Eventos</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-brand-gold">Redes Sociais</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-all">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Doce Encanto Confeitaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Script Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
